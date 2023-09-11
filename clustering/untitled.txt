@@ -1,0 +1,13 @@
+clusters = range(1,10)
+dists = []
+
+for k in clusters:
+    model = KMeans(n_clusters = k)
+    model.fit(feature)
+    pred = model.predict(feature)
+    dists.append(model.inertia_)
+
+plt.plot(clusters, dists)
+plt.xlabel('Number of Clusters')
+plt.ylabel('Sum of Squared Distances')
+plt.show()
